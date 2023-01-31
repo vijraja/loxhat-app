@@ -1,0 +1,40 @@
+<div class="loxo-sign-parent">
+    <div class="loxo-sign-child bdr-rd">
+        <div class="align-center">
+            <h2>
+                <LoxhatLogo />
+            </h2>
+        </div>
+        <div class="align-center">
+            <div>
+                <b>
+                    {{if @isNewUser "Sign up" "Sign in"}}
+                </b>
+            </div>
+        </div>
+        <div>
+            <form>
+                {{#if isNewUser}}
+                <Commons::LoxoInputBox @type="text" @placeholder="Full name" />
+                <Commons::LoxoInputBox @type="number" @placeholder="Mobile number" />
+                <Commons::LoxoInputBox @type="password" @placeholder="Password" />
+                {{else}}
+                <Commons::LoxoInputBox @type="number" @placeholder="Mobile number" />
+                {{/if}}
+                <div class="align-center mrg-top">
+                    <button type="submit" class="bdr-rd">submit</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <div class="align-center mrg-top">
+                    <LinkTo @route="index" class="text-decoration">
+                        <button class="bdr-rd">Sign up</button>
+                    </LinkTo>
+                    <LinkTo @route="user-sign-in" class="text-decoration">
+                        <button class="bdr-rd">Sign in</button>
+                    </LinkTo>
+            </div>
+        </div>
+    </div>
+</div>
