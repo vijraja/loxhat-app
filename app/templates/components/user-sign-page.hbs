@@ -20,6 +20,7 @@
                 <Commons::LoxoInputBox @type="password" @placeholder="Password" />
                 {{else}}
                 <Commons::LoxoInputBox @type="number" @placeholder="Mobile number" />
+                <Commons::LoxoInputBox @type="password" @placeholder="Password" />
                 {{/if}}
                 <div class="align-center mrg-top">
                     <button type="submit" class="bdr-rd">submit</button>
@@ -28,12 +29,13 @@
         </div>
         <div>
             <div class="align-center mrg-top">
-                    <LinkTo @route="index" class="text-decoration">
-                        <button class="bdr-rd">Sign up</button>
-                    </LinkTo>
-                    <LinkTo @route="user-sign-in" class="text-decoration">
-                        <button class="bdr-rd">Sign in</button>
-                    </LinkTo>
+                {{#if isNewUser}}
+                For LoXhat family
+                    <LinkTo @route="user-sign-in" class="text-decoration">Sign in</LinkTo>
+                {{else}}
+                Join LoXhat family
+                <LinkTo @route="user-sign-up" class="text-decoration">Sign up</LinkTo>
+                {{/if}}
             </div>
         </div>
     </div>

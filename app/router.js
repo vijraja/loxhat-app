@@ -8,4 +8,5 @@ export default class Router extends EmberRouter {
 
 Router.map(function() {
   this.route('user-sign-in');
+  this.route('user-sign-up');
 });
